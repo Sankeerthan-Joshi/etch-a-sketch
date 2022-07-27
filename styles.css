@@ -1,0 +1,25 @@
+html {
+    height: 100%;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 500px;
+    width: 500px;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+}
+
+.item {
+    border: 1px solid red ;
+    width: 6.25%;
+}
+
+.item:hover {
+    background-color: black;
+}
