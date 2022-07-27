@@ -9,7 +9,7 @@ function resize(){
     createGrid(size);
     dragEventAdder();
 }
-document.querySelector('button').addEventListener('click', resize)
+document.querySelector('#resize').addEventListener('click', resize)
 
 let container = document.querySelector('.grid');
 
@@ -35,9 +35,41 @@ createGrid(16);
 // default drag event adding for each item
 dragEventAdder();
 
+// -------------------------------------------------------- ON DRAG ---------------------------------------------------------
+
+
+// Adding black bg to the item when dragged on it
 function dragEventAdder(){
     let items = document.querySelectorAll('.item')
 items.forEach(element => {
     element.addEventListener('dragover', (e)=>(e.path[0].classList.add('drag')))
 });
 }
+
+// -----------------------------------------------------------------------------------------------------------------------
+
+
+// -------------------------------------------------------- ZOOM ---------------------------------------------------------
+
+let zoom;
+// Multiply width and height with entered value and set width and height of grid container with that value
+function onZoom(){
+    zoom = window.prompt('How many times?');
+    style = 'width: '+(zoom*500 )+'px; height: '+(zoom*500)+'px;';
+    document.querySelector('.grid').setAttribute('style', style)
+}
+
+// Click event for zoom button
+document.querySelector("#zoom").addEventListener('click', onZoom)
+// -----------------------------------------------------------------------------------------------------------------------
+
+
+// -------------------------------------------------------- CLEAR ---------------------------------------------------------
+function clear(){
+    let items = document.querySelectorAll('.item')
+items.forEach(element => {
+    element.classList.remove('drag')
+});
+}
+
+document.querySelector('#clear').addEventListener('click', clear);
