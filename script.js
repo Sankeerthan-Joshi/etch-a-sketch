@@ -5,6 +5,7 @@
 function resize(){
     
     size = window.prompt('Size?');
+    if(size>=100){window.alert('Should be less than 100'); return null}
     container.innerHTML = ''
     createGrid(size);
     dragEventAdder();
@@ -73,3 +74,4 @@ items.forEach(element => {
 }
 
 document.querySelector('#clear').addEventListener('click', clear);
+// -----------------------------------------------------------------------------------------------------------------------
