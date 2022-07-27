@@ -1,18 +1,32 @@
 
+
+
+// To resize grid
+function resize(){
+    
+    size = window.prompt('Size?');
+    container.innerHTML = ''
+    createGrid(size)
+}
+document.querySelector('button').addEventListener('click', resize)
+
+let container = document.querySelector('.grid');
+
+function createGrid(size){
 let gridEle;
 let grid;
-let className;
-let selector;
-for(let i=0; i<16; i++){
+for(let i=0; i<size; i++){
     grid = document.createElement('div');
-    className = 'container' + i;
     grid.setAttribute('class','container');
-    document.body.appendChild(grid);
-    for(let j=0;j<16;j++){
+    container.appendChild(grid);
+    for(let j=0;j<size;j++){
         gridEle = document.createElement('div');
         gridEle.setAttribute('class', 'item');
-        selector = '.'+className;
         grid.append(gridEle);
     }
 
 }
+}
+
+// Default grid of 16x16
+createGrid(16);
