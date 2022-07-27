@@ -44,6 +44,8 @@ dragEventAdder();
 function dragEventAdder(){
     let items = document.querySelectorAll('.item')
 items.forEach(element => {
+    
+    element.addEventListener('dragstart', (e)=>(e.path[0].classList.add('drag')))
     element.addEventListener('dragover', (e)=>(e.path[0].classList.add('drag')))
 });
 }
@@ -76,3 +78,16 @@ items.forEach(element => {
 
 document.querySelector('#clear').addEventListener('click', clear);
 // -----------------------------------------------------------------------------------------------------------------------
+
+// -------------------------------------------------------- ERASE ---------------------------------------------------------
+
+function eraser(){
+    let items = document.querySelectorAll('.item')
+items.forEach(element => {
+    
+    element.addEventListener('dragstart', (e)=>(e.path[0].classList.toggle('drag')))
+    element.addEventListener('dragover', (e)=>(e.path[0].classList.toggle('drag')))
+});
+}
+document.querySelector('#erase').addEventListener('click', eraser);
+
