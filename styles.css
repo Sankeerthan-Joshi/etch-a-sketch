@@ -24,8 +24,12 @@ html {
 
 .item:hover {
     background-color: black;
-    transition: 0s;
 }
+
+.item-erase:hover {
+    background-color: lavender;
+}
+
 
 .drag {
     background-color: black;
