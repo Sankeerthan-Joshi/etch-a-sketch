@@ -5,6 +5,7 @@
 function resize(){
     
     size = window.prompt('Size?');
+    if(!size){return null}
     if(size>=100){window.alert('Should be less than 100'); return null}
     container.innerHTML = ''
     createGrid(size);
