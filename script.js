@@ -6,7 +6,8 @@ function resize(){
     
     size = window.prompt('Size?');
     container.innerHTML = ''
-    createGrid(size)
+    createGrid(size);
+    dragEventAdder();
 }
 document.querySelector('button').addEventListener('click', resize)
 
@@ -30,3 +31,13 @@ for(let i=0; i<size; i++){
 
 // Default grid of 16x16
 createGrid(16);
+
+// default drag event adding for each item
+dragEventAdder();
+
+function dragEventAdder(){
+    let items = document.querySelectorAll('.item')
+items.forEach(element => {
+    element.addEventListener('dragover', (e)=>(e.path[0].classList.add('drag')))
+});
+}

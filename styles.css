@@ -7,6 +7,9 @@ html {
     justify-content: center;
     height: 500px;
     width: 500px;
+    border: 2px solid black;
+    border-radius: 4px;
+    margin: auto;
 }
 
 .container {
@@ -16,10 +19,14 @@ html {
 }
 
 .item {
-    border: 1px solid red ;
     flex: 1;
 }
 
 .item:hover {
+    background-color: black;
+    transition: 0s;
+}
+
+.drag {
     background-color: black;
 }
